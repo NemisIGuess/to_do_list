@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+:root {
+  font-family: "Roboto", sans-serif;
+  --white: #ffffff;
+  --grey: #95a5a6;
+  --accent: #c5b13d;
+  --opacityAccent: #c0ac3b73;
+  font-size: 20px;
+}
+
+body {
+  background-color: var(--white);
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: 5% 95%;
+  grid-template-areas:
+    "header header"
+    "navigation content";
+}
+
+#header {
+  grid-area: header;
+  background-color: var(--accent);
+}
+
+#navBar {
+  grid-area: navigation;
+  background-color: var(--opacityAccent);
+}
+
+#navBarContainer {
+  margin: 3rem 2rem 5rem 1rem;
+}
+.tag {
+  font-size: 1.2rem;
+  margin: 0.5rem 0 0.5rem 0.4rem;
+}
+
+#content {
+  grid-area: content;
+  justify-self: center;
+  width: 90%;
+  overflow: auto;
+}
+
+#contentContainer {
+  margin: 3rem 2rem 5rem 1rem;
+}
+
+#tagText {
+  margin: 0;
+  align-self: end;
+  justify-self: center;
+  font-size: 1.7rem;
+  display: inline;
+}
+
+.task {
+  display: grid;
+  grid-template-columns: 25px auto 25px;
+  grid-template-rows: 50% 50%;
+  grid-template-areas:
+    "checkbox title edit"
+    "checkbox description remove";
+}
+
+.taskTitle {
+  margin-left: 0.3rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.taskDescription {
+  grid-area: description;
+  font-size: 0.7rem;
+  margin-left: 0.4rem;
+  opacity: 0.75;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.checkImage {
+  grid-area: checkbox;
+  align-self: center;
+  margin-left: 1px;
+  width: 25px;
+  height: 25px;
+}
+
+.editImage {
+  grid-area: edit;
+}
+
+.deleteImage {
+  grid-area: remove;
+}
+
+.taskImage {
+  visibility: hidden;
+}
+
+.task:hover .taskImage {
+  visibility: visible;
+}
+
+.strikeText {
+  text-decoration: line-through;
+  opacity: 50%;
+}
