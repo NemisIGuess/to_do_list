@@ -1,0 +1,1 @@
+(()=>{"use strict";const t=(()=>{const t=[];return{setTask:e=>{t.push(e),console.log(t)},getArray:()=>t}})();document.getElementById("addTaskButton").addEventListener("click",(()=>{t.setTask({title:"hola",description:"soy colosal",date:"1990"})}))})();

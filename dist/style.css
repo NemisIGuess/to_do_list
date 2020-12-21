@@ -4,9 +4,25 @@
   font-family: "Roboto", sans-serif;
   --white: #ffffff;
   --grey: #95a5a6;
-  --accent: #c5b13d;
-  --opacityAccent: #c0ac3b73;
+  --main: #3dc586;
+  --support: #3dc58650;
   font-size: 20px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--main);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--grey);
 }
 
 body {
@@ -16,7 +32,7 @@ body {
   width: 100vw;
   display: grid;
   grid-template-columns: 30% 70%;
-  grid-template-rows: 5% 95%;
+  grid-template-rows: 6% 94%;
   grid-template-areas:
     "header header"
     "navigation content";
@@ -24,17 +40,48 @@ body {
 
 #header {
   grid-area: header;
-  background-color: var(--accent);
+  background-color: var(--main);
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-areas: "logo welcome";
+}
+
+#logo {
+  grid-area: logo;
+  width: 40px;
+  height: 40px;
+  border-top-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin-left: 1rem;
+  align-self: center;
+}
+
+#title {
+  margin: 0 0 0 4rem;
+  display: inline;
+  grid-area: logo;
+  align-self: center;
+}
+
+#welcome {
+  grid-area: welcome;
+  align-self: center;
+  justify-self: end;
+  margin: 0 3rem 0 0;
 }
 
 #navBar {
   grid-area: navigation;
-  background-color: var(--opacityAccent);
+  background-color: var(--support);
+  overflow: auto;
 }
 
 #navBarContainer {
   margin: 3rem 2rem 5rem 1rem;
+  max-height: 50%;
+  overflow: auto;
 }
+
 .tag {
   font-size: 1.2rem;
   margin: 0.5rem 0 0.5rem 0.4rem;
@@ -44,19 +91,41 @@ body {
   grid-area: content;
   justify-self: center;
   width: 90%;
-  overflow: auto;
-}
-
-#contentContainer {
-  margin: 3rem 2rem 5rem 1rem;
+  display: grid;
+  grid-template-columns: 80% 20%;
+  grid-template-rows: 10% 90%;
+  grid-template-areas:
+    "title headerBtn"
+    "content content";
 }
 
 #tagText {
-  margin: 0;
-  align-self: end;
+  grid-area: title;
   justify-self: center;
+  align-self: center;
   font-size: 1.7rem;
   display: inline;
+}
+
+#addTaskButton {
+  grid-area: headerBtn;
+  align-self: center;
+  justify-self: center;
+  outline: none;
+  border-radius: 50%;
+  border: none;
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--main);
+  font-size: 1rem;
+  color: var(--white);
+  align-self: center;
+}
+
+#taskContainer {
+  overflow: auto;
+  grid-area: content;
+  margin-bottom: 3rem;
 }
 
 .task {
@@ -64,11 +133,17 @@ body {
   grid-template-columns: 25px auto 25px;
   grid-template-rows: 50% 50%;
   grid-template-areas:
-    "checkbox title edit"
+    "checkbox taskTitle edit"
     "checkbox description remove";
+  border-bottom: 1px solid var(--grey);
+}
+
+.task:last-child {
+  border-bottom: none;
 }
 
 .taskTitle {
+  grid-area: taskTitle;
   margin-left: 0.3rem;
   white-space: nowrap;
   overflow: hidden;
@@ -103,6 +178,8 @@ body {
 
 .taskImage {
   visibility: hidden;
+  align-self: center;
+  justify-self: center;
 }
 
 .task:hover .taskImage {
