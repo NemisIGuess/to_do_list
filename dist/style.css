@@ -27,23 +27,25 @@
 
 body {
   background-color: var(--white);
-  margin: 0;
+  margin: 0 auto;
   height: 100vh;
   width: 100vw;
   display: grid;
-  grid-template-columns: 30% 70%;
+  grid-template-columns: 25% 75%;
   grid-template-rows: 6% 94%;
   grid-template-areas:
     "header header"
     "navigation content";
+  max-width: 1080px;
 }
 
-#header {
+header {
   grid-area: header;
   background-color: var(--main);
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-areas: "logo welcome";
+  max-height: 100px;
 }
 
 #logo {
@@ -70,16 +72,11 @@ body {
   margin: 0 3rem 0 0;
 }
 
-#navBar {
+nav {
   grid-area: navigation;
   background-color: var(--support);
   overflow: auto;
-}
-
-#navBarContainer {
-  margin: 3rem 2rem 5rem 1rem;
-  max-height: 50%;
-  overflow: auto;
+  max-width: 200px;
 }
 
 .tag {
@@ -189,4 +186,67 @@ body {
 .strikeText {
   text-decoration: line-through;
   opacity: 50%;
+}
+
+@media only screen and (min-width: 240px) and (max-width: 750px) {
+  :root {
+    font-size: 15px;
+  }
+
+  #navBar {
+    display: none;
+  }
+
+  body {
+    grid-template-rows: 15% 85%;
+    grid-template-areas:
+      "header header"
+      "content content";
+  }
+
+  #content {
+    grid-area: "content";
+  }
+}
+
+@media only screen and (max-height: 780px) {
+  :root {
+    font-size: 15px;
+  }
+
+  #navBar {
+    display: none;
+  }
+
+  body {
+    grid-template-rows: 15% 85%;
+    grid-template-areas:
+      "header header"
+      "content content";
+  }
+
+  #content {
+    grid-area: "content";
+  }
+}
+
+@media only screen and (min-device-height: 200px) and (max-device-height: 780px) {
+  :root {
+    font-size: 15px;
+  }
+
+  #navBar {
+    display: none;
+  }
+
+  body {
+    grid-template-rows: 15% 85%;
+    grid-template-areas:
+      "header header"
+      "content content";
+  }
+
+  #content {
+    grid-area: "content";
+  }
 }
