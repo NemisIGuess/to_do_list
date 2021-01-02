@@ -5,20 +5,20 @@ const taskHolder = (() => {
         description: "que tal",
         status: "../src/images/unmarked_checkbox.png",
     }, {
-        title: "hola",
-        description: "que tal",
+        title: "hola2",
+        description: "que tal2",
         status: "../src/images/marked_checkbox.png",
     }, {
-        title: "hola",
-        description: "que tal",
+        title: "hola3",
+        description: "que tal3",
         status: "../src/images/unmarked_checkbox.png",
     }, {
-        title: "hola",
-        description: "que tal",
+        title: "hola4",
+        description: "que tal4",
         status: "../src/images/marked_checkbox.png",
     }, {
-        title: "hola",
-        description: "que tal",
+        title: "hola5",
+        description: "que tal5",
         status: "../src/images/unmarked_checkbox.png",
     }];
 

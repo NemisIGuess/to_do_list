@@ -84,7 +84,7 @@ nav {
   margin: 0.5rem 0 0.5rem 0.4rem;
 }
 
-#content {
+main {
   grid-area: content;
   justify-self: center;
   width: 90%;
@@ -203,10 +203,6 @@ nav {
       "header header"
       "content content";
   }
-
-  #content {
-    grid-area: "content";
-  }
 }
 
 @media only screen and (max-height: 780px) {
@@ -224,10 +220,6 @@ nav {
       "header header"
       "content content";
   }
-
-  #content {
-    grid-area: "content";
-  }
 }
 
 @media only screen and (min-device-height: 200px) and (max-device-height: 780px) {
@@ -244,9 +236,5 @@ nav {
     grid-template-areas:
       "header header"
       "content content";
-  }
-
-  #content {
-    grid-area: "content";
   }
 }
