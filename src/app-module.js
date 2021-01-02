@@ -12,6 +12,17 @@ const App = (() => {
 
 
 addTaskButton.addEventListener('click', () => {
-    console.log(taskHolder.getArray());
     renderArray(taskContainer, taskHolder.getArray());
+    createCheckArray()
+    console.log(createCheckArray);
 })
+
+const createCheckArray = () => {
+    const checkImages = document.querySelectorAll('checkImage');
+    const checkArray = [...checkImages].forEach((prop) => {
+        prop.addEventListener('click', (e) => {
+            console.log(e.target.value)
+            renderArray(taskContainer, taskHolder.getArray());
+        })
+    })
+}
