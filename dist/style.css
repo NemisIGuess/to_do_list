@@ -39,6 +39,20 @@ body {
   max-width: 1080px;
 }
 
+.overflow {
+  overflow: hidden;
+}
+
+.viewBlocker {
+  background-color: rgba(128, 128, 128, 0.692);
+  z-index: 2;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+}
+
 header {
   grid-area: header;
   background-color: var(--main);
@@ -229,6 +243,9 @@ main {
   left: 40%;
   border-radius: 1em;
   border: 1px solid black;
+}
+
+.visibility {
   visibility: hidden;
 }
 

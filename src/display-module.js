@@ -48,4 +48,8 @@ const buttonAnimation = (button) => {
     }
 }
 
-export {renderArray, buttonAnimation}
+const elementVisibility = (element) => {
+    element.classList.toggle("visibility")
+}
+
+export {renderArray, buttonAnimation, elementVisibility}
