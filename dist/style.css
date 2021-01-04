@@ -58,7 +58,7 @@ header {
   align-self: center;
 }
 
-#title {
+#appTitle {
   margin: 0 0 0 4rem;
   display: inline;
   grid-area: logo;
@@ -82,6 +82,11 @@ nav {
 .tag {
   font-size: 1.2rem;
   margin: 0.5rem 0 0.5rem 0.4rem;
+  caret-color: transparent;
+}
+
+.tag:hover {
+  cursor: pointer;
 }
 
 main {
@@ -117,6 +122,20 @@ main {
   font-size: 1rem;
   color: var(--white);
   align-self: center;
+}
+
+#addTaskButton:hover {
+  cursor: pointer;
+}
+
+.rotate45 {
+  transform: rotate(45deg);
+  transition: 0.5s ease;
+}
+
+.rotate0 {
+  transform: rotate(0deg);
+  transition: 0.5s ease;
 }
 
 #taskContainer {
@@ -165,6 +184,10 @@ main {
   height: 25px;
 }
 
+.checkImage:hover {
+  cursor: pointer;
+}
+
 .editImage {
   grid-area: edit;
 }
@@ -173,10 +196,18 @@ main {
   grid-area: remove;
 }
 
+.deleteImage:hover {
+  cursor: pointer;
+}
+
 .taskImage {
   visibility: hidden;
   align-self: center;
   justify-self: center;
+}
+
+.taskImage:hover {
+  cursor: pointer;
 }
 
 .task:hover .taskImage {
@@ -186,6 +217,46 @@ main {
 .strikeText {
   text-decoration: line-through;
   opacity: 50%;
+}
+
+.formDiv {
+  width: 30vw;
+  height: fit-content;
+  background-color: var(--main);
+  z-index: 5;
+  position: fixed;
+  top: 20%;
+  left: 40%;
+  border-radius: 1em;
+  border: 1px solid black;
+  visibility: hidden;
+}
+
+#addTaskFormTitle {
+  text-align: center;
+  color: var(--darkText);
+}
+
+.taskFormInput {
+  padding: 0.3rem;
+  width: 80%;
+  margin: 1em auto;
+  display: block;
+}
+
+.descriptionArea {
+  resize: none;
+  height: 100px;
+}
+
+.taskFormButton {
+  margin: 2em auto;
+  padding: 0.5em 5em;
+  border-radius: 20px;
+  border: 1px solid black;
+  background-color: var(--white);
+  display: block;
+  max-width: 80%;
 }
 
 @media only screen and (min-width: 240px) and (max-width: 750px) {
@@ -203,38 +274,9 @@ main {
       "header header"
       "content content";
   }
-}
 
-@media only screen and (max-height: 780px) {
-  :root {
-    font-size: 15px;
-  }
-
-  #navBar {
-    display: none;
-  }
-
-  body {
-    grid-template-rows: 15% 85%;
-    grid-template-areas:
-      "header header"
-      "content content";
-  }
-}
-
-@media only screen and (min-device-height: 200px) and (max-device-height: 780px) {
-  :root {
-    font-size: 15px;
-  }
-
-  #navBar {
-    display: none;
-  }
-
-  body {
-    grid-template-rows: 15% 85%;
-    grid-template-areas:
-      "header header"
-      "content content";
+  .formDiv {
+    width: 80vw;
+    left: 10%;
   }
 }

@@ -4,7 +4,12 @@ const createTask = (title, description, date, status) => {
     return {title, description, date, status}
 }
 
-export {createTask}
+const changeTaskStatus = (position, taskArray, modifyTask) => {
+    const task = taskArray.find(prop => prop.position === position);
+    (task.status === "undone") ? modifyTask(position, 'status', 'done') : modifyTask(position, 'status', 'undone');
+}
+
+export {createTask, changeTaskStatus}
 
 // Necesitare imprimir el index del array dentro del objeto para poder cambiar su posicion en el array
 // (cuando la completas se va al final) y poder volver a renderizarla en su posicion original.

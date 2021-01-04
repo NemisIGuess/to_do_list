@@ -3,34 +3,44 @@ const taskHolder = (() => {
     const tasksArray = [{
         title: "hola",
         description: "que tal",
-        status: "../src/images/unmarked_checkbox.png",
+        status: "undone",
+        position: "0",
     }, {
         title: "hola2",
         description: "que tal2",
-        status: "../src/images/marked_checkbox.png",
+        status: "done",
+        position: "1",
     }, {
         title: "hola3",
         description: "que tal3",
-        status: "../src/images/unmarked_checkbox.png",
+        status: "undone",
+        position: "2",
     }, {
         title: "hola4",
         description: "que tal4",
-        status: "../src/images/marked_checkbox.png",
+        status: "done",
+        position: "3",
     }, {
         title: "hola5",
         description: "que tal5",
-        status: "../src/images/unmarked_checkbox.png",
+        status: "undone",
+        position: "4",
     }];
 
     const setTask = (task) => {
         tasksArray.push(task);
-    }
+    };
+
+    const modifyTask = (index, key, newValue) => {
+        const taskToModify = tasksArray[index];
+        taskToModify[key] = newValue;
+    };
 
     const getArray = () => {
         return tasksArray;
-    }
+    };
 
-    return {setTask, getArray}
+    return {setTask, getArray, modifyTask}
 })();
 
 export default taskHolder

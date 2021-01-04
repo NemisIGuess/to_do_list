@@ -1,7 +1,7 @@
 // Module that controls how the app functions
-import {createTask} from './services-module'
+import {createTask, changeTaskStatus} from './services-module'
 import taskHolder from './info-module'
-import {renderArray} from './display-module'
+import {renderArray, buttonAnimation} from './display-module'
 
 const App = (() => {
     const taskContainer = document.getElementById('taskContainer');
@@ -10,19 +10,19 @@ const App = (() => {
     return {taskContainer, addTaskButton}
 })();
 
-
 addTaskButton.addEventListener('click', () => {
+    buttonAnimation(addTaskButton);
     renderArray(taskContainer, taskHolder.getArray());
-    createCheckArray()
-    console.log(createCheckArray);
+    checkEventListeners()
 })
 
-const createCheckArray = () => {
-    const checkImages = document.querySelectorAll('checkImage');
-    const checkArray = [...checkImages].forEach((prop) => {
+const checkEventListeners = () => {
+    const checkArray = [...document.querySelectorAll('.checkImage')];
+    checkArray.forEach((prop) => {
         prop.addEventListener('click', (e) => {
-            console.log(e.target.value)
+            changeTaskStatus(e.target.attributes[1].value, taskHolder.getArray(), taskHolder.modifyTask);
             renderArray(taskContainer, taskHolder.getArray());
+            checkEventListeners();
         })
     })
 }

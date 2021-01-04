@@ -8,7 +8,7 @@
     <body>
         <header>
             <img id="logo" src="../src/images/logo.png">
-            <h1 id="title">To Do List</h1>
+            <h1 id="appTitle">To Do List</h1>
             <h3 id="welcome">Welcome, caraculo.</h3>
         </header>
         <nav>
@@ -42,6 +42,15 @@
                 </div>
             </div>
         </main>
+        <div class="formDiv" id="addTaskForm">
+            <h3 id="addTaskFormTitle">Add a task</h3>
+            <form id="form">
+                <input class="taskFormInput" id="title" type="text" placeholder="Title" required>
+                <textarea class="taskFormInput descriptionArea" id="author" type="text" placeholder="Description"></textarea>
+                <input class="taskFormInput" id="pages" type="date" required>
+                <input type="submit" form="form" value="Submit" class="taskFormButton" id="submitButton"></button>
+            </form>
+        </div>
         <script src="main.js"></script>
     </body>
 </html>
