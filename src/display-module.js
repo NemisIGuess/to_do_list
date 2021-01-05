@@ -4,6 +4,7 @@ const renderArray = (element, array) => {
     array.forEach((object, index) => {
         const task = document.createElement('div');
         task.setAttribute('class', 'task');
+        task.setAttribute('id', index);
 
         const titleSpan = document.createElement('span');
         titleSpan.setAttribute('value', index);
@@ -21,11 +22,12 @@ const renderArray = (element, array) => {
         checkImage.setAttribute('class', 'checkImage');
 
         const editImage = document.createElement('img');
+        editImage.setAttribute('value', index)
         editImage.setAttribute('src', '../src/images/edit.png');
         editImage.setAttribute('class', 'editImage taskImage')
 
-
         const deleteImage = document.createElement('img');
+        deleteImage.setAttribute('value', index)
         deleteImage.setAttribute('src', '../src/images/bin.png');
         deleteImage.setAttribute('class', 'deleteImage taskImage');
 

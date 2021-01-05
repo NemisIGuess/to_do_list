@@ -173,6 +173,7 @@ main {
 }
 
 .taskTitle {
+  font-size: 0.8rem;
   grid-area: taskTitle;
   margin-left: 0.3rem;
   white-space: nowrap;

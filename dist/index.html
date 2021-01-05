@@ -19,34 +19,14 @@
             <h2 id="tagText">Home</h2>
             <button id="addTaskButton">+</button>
             <div id="taskContainer">
-                <div class="task">
-                    <img class="checkImage" src="../src/images/unmarked_checkbox.png">
-                    <span class="taskTitle">Sacar al perro</span>
-                    <img class="editImage taskImage" src="../src/images/edit.png">
-                    <span class="taskDescription">Sacarlo antes de las 8</span>
-                    <img class="deleteImage taskImage" src="../src/images/bin.png">
-                </div>
-                <div class="task">
-                    <img class="checkImage" src="../src/images/marked_checkbox.png" alt="Mark as done" title="Mark as done">
-                    <span class="taskTitle strikeText">Sacar al perro</span>
-                    <img class="editImage taskImage" src="../src/images/edit.png" alt="Edit task" title="Edit task">
-                    <span class="taskDescription strikeText">Sacarlo antes de las 8</span>
-                    <img class="deleteImage taskImage" src="../src/images/bin.png" alt="Delete task" title="Delete task">
-                </div>
-                <div class="task">
-                    <img class="checkImage" src="../src/images/unmarked_checkbox.png" alt="Mark as done" title="Mark as done">
-                    <span class="taskTitle">Sacar al perro</span>
-                    <img class="editImage taskImage" src="../src/images/edit.png" alt="Edit task" title="Edit task">
-                    <span class="taskDescription">Sacarlo antes de las 8</span>
-                    <img class="deleteImage taskImage" src="../src/images/bin.png" alt="Delete task" title="Delete task">
-                </div>
             </div>
         </main>
+        <div class="viewBlocker visibility"></div>
         <div class="formDiv visibility" id="addTaskForm">
             <h3 id="addTaskFormTitle">Add a task</h3>
             <form id="form">
                 <input class="taskFormInput" id="title" type="text" placeholder="Title" required>
-                <textarea class="taskFormInput descriptionArea" id="author" type="text" placeholder="Description"></textarea>
+                <textarea class="taskFormInput descriptionArea" id="description" type="text" placeholder="Description"></textarea>
                 <!-- <input class="taskFormInput" id="pages" type="date" required> -->
                 <input type="submit" form="form" value="Submit" class="taskFormButton" id="submitButton"></button>
             </form>
