@@ -54,4 +54,15 @@ const elementVisibility = (element) => {
     element.classList.toggle("visibility")
 }
 
-export {renderArray, buttonAnimation, elementVisibility}
+const modifyTaskForm = (formTitleElement, taskTitleElement, taskDescriptionElement, task) => {
+    formTitleElement.textContent = "Modify the task";
+    taskTitleElement.value = task.title;
+    taskDescriptionElement.value = task.description;
+}
+
+const resetTaskForm = (formTitleElement) => {
+    formTitleElement.textContent = "Add a task";
+    form.reset();
+}
+
+export {renderArray, buttonAnimation, elementVisibility, modifyTaskForm, resetTaskForm}
