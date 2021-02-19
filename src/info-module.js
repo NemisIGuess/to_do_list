@@ -1,29 +1,26 @@
 // Module that keeps the information
 const taskHolder = (() => {
-    let _tasksArray = [];
+  let _tasksArray = [];
 
-    const setTask = (task) => {
-        _tasksArray.push(task);
-    };
+  const setTask = (task) => {
+    _tasksArray.push(task);
+  };
 
-    const removeTask = (index) => {
-        _tasksArray.splice(index, 1);
-    }
+  const removeTask = (index) => {
+    _tasksArray.splice(index, 1);
+  };
 
-    const modifyTask = (index, key, newValue) => {
-        const taskToModify = _tasksArray[index];
-        taskToModify[key] = newValue;
-    };
+  const modifyTask = (index, key, newValue) => {
+    const taskToModify = _tasksArray[index];
+    taskToModify[key] = newValue;
+  };
 
-    const getArray = () => {
-        return _tasksArray;
-    };
+  const getArray = () => _tasksArray;
+  const setArray = (array) => {
+    _tasksArray = [...array];
+  };
 
-    const setArray = (array) => {
-        _tasksArray = [...array];
-    }
-
-    return {setTask, getArray, modifyTask, setArray, removeTask}
+  return { setTask, getArray, modifyTask, setArray, removeTask };
 })();
 
-export default taskHolder
+export default taskHolder;
